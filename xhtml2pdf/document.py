@@ -169,6 +169,6 @@ def pisaDocument(src, dest=None, path=None, link_callback=None, debug=0,
     context.dest = dest
 
     data = out.getvalue()  # TODO: That load all the tempfile in RAM - Why bother with a swapping tempfile then?
-    context.dest.write(data)  # TODO: context.dest is a tempfile as well...
+    context.dest.write(bytes(data, 'utf-8'))  # TODO: context.dest is a tempfile as well...
 
     return context
